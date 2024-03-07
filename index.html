@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="popup">
+        <div class="popup-content">
+            <div class="instructions-container">
+                <div class="instructions">
+                    Guess the Wordle in 6 tries.
+                </div>
+                <div class="instructions">
+                    Each guess must be a valid 5-letter word.
+                </div>
+                <div class="instructions">
+                    The color of the tiles will change to show how close your guess was to the word.
+                </div>
+            </div>
+            <div class="example-container">
+                <div class="example">
+                    <div class="example-letter correct">W</div>
+                    <div class="example-letter">E</div>
+                    <div class="example-letter">A</div>
+                    <div class="example-letter">R</div>
+                    <div class="example-letter">Y</div>
+                </div>
+                <div class="example-description">
+                    <div class="description-item">W is in the word and in the correct spot.</div>
+                </div>
+            </div>
+            <div class="example-container">
+                <div class="example">
+                    <div class="example-letter">P</div>
+                    <div class="example-letter">I</div>
+                    <div class="example-letter wrong-spot">L</div>
+                    <div class="example-letter">L</div>
+                    <div class="example-letter">S</div>
+                </div>
+                <div class="example-description">
+                    <div class="description-item">L is in the word but in the wrong spot.</div>
+                </div>
+            </div>
+            <div class="example-container">
+                <div class="example">
+                    <div class="example-letter">V</div>
+                    <div class="example-letter">A</div>
+                    <div class="example-letter">G</div>
+                    <div class="example-letter not-in-word">U</div>
+                    <div class="example-letter">E</div>
+                </div>
+                <div class="example-description">
+                    <div class="description-item">U is not in the word in any spot.</div>
+                </div>
+            </div>
+            <button class="close-button">Let's Play</button>
+        </div>
+    </div>
+    <div id="leaderboard">
+        <h3>Leaderboard</h3>
+        <ul id="leaderList"></ul>
+      </div>
+    <input type="text" id="guessInput" maxlength="5" />
+    <button onclick="submitGuess()" id="guessButton">Guess</button>
+    <button onclick="resetGame()" id="resetButton" style="display:none;">Reset Game</button>
+    <div id="feedback"></div>
+    <div id="timer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
